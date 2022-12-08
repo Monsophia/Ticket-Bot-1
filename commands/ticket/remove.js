@@ -6,13 +6,13 @@ module.exports = {
 	usage: 'remove <member>',
 	userperms: ['ADMINISTRATOR'],
 	botperms: [],
-	run: async (client, message, args, prefix) => {
-		if(message.channel.name.includes('ticket-')) {
+	run: async (message, args, prefix) => {
+		if (message.channel.name.includes('ticket-')) {
 			const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username === args.slice(0).join(' ') || x.user.username === args[0]);
-			if(!member) {
+			if (!member) {
 				return message.channel.send(`Incorrect Usage! Correct Usage:${prefix}remove <member>`);
 			}
-			try{
+			try {
 				message.channel.updateOverwrite(member.user, {
 					VIEW_CHANNEL: false,
 					SEND_MESSAGES: false,
@@ -22,7 +22,7 @@ module.exports = {
 					message.channel.send(`Successfully removed ${member} from ${message.channel}`);
 				});
 			}
-			catch(e) {
+			catch (e) {
 				return message.channel.send('An error occurred, please try again!');
 			}
 		}

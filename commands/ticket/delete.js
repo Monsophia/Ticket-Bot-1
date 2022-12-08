@@ -7,8 +7,8 @@ module.exports = {
 	usage: 'delete',
 	userperms: ['ADMINISTRATOR'],
 	botperms: [],
-	run: async (client, message, args) => {
-		if(message.channel.name.includes('ticket-')) {
+	run: async (message) => {
+		if (message.channel.name.includes('ticket-')) {
 			message.channel.delete();
 		}
 		else {

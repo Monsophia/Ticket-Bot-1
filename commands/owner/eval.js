@@ -11,7 +11,7 @@ module.exports = {
 	usage: 'eval <code>',
 	userperms: ['BOT_OWNER'],
 	botperms: ['USE_EXTERNAL_EMOJIS'],
-	run: async (client, message, args) => {
+	run: async (message, args) => {
 		const embed = new MessageEmbed()
 			.addField('Input', '```js\n' + args.join(' ') + '```');
 
@@ -24,7 +24,7 @@ module.exports = {
 		}
 
 		const words = ['secret', 'token', 'process.env', 'config.json'];
-		for(const word of words) {
+		for (const word of words) {
 			if (code.replace('\\', '').toLowerCase().includes(word)) {
 				embed.setTitle('Error!');
 				embed.addField('Output', '```Nice try buddy! What you gonna do with it?```').setColor('GREEN');
@@ -49,7 +49,7 @@ module.exports = {
 						description: ' ',
 					});
 				}
-				catch(e) {
+				catch (e) {
 					return message.channel.send('An error occurred, please try again!');
 				}
 
@@ -79,7 +79,7 @@ module.exports = {
 						description: ' ',
 					});
 				}
-				catch(e) {
+				catch (e) {
 					return message.channel.send('An error occurred, please try again!');
 				}
 

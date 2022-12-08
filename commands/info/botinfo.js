@@ -24,9 +24,9 @@ module.exports = {
 	usage: 'botinfo',
 	userperms: [],
 	botperms: ['USE_EXTERNAL_EMOJIS'],
-	run: async (client, message, args) => {
-		cpuStat.usagePercent(function(error, percent, seconds) {
-			if(error) {
+	run: async (client, message) => {
+		cpuStat.usagePercent(function (error) {
+			if (error) {
 				return console.error(error);
 			}
 			const embed = new MessageEmbed()

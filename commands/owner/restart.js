@@ -9,7 +9,7 @@ module.exports = {
 	usage: 'restart',
 	userperms: ['BOT_OWNER'],
 	botperms: ['USE_EXTERNAL_EMOJIS'],
-	run: async (client, message, args) => {
+	run: async (client, message) => {
 		try {
 			message.channel.send('⚙ Restarting...').then(msg => msg.delete({ timeout: 300 }))
 				.then(() => client.destroy())

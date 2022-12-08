@@ -7,7 +7,7 @@ module.exports = {
 	usage: 'open',
 	userperms: ['ADMINISTRATOR'],
 	botperms: [],
-	run: async (client, message, args) => {
+	run: async (message) => {
 		if (message.channel.name.includes('ticket-')) {
 			const member = message.guild.members.cache.get(message.channel.name.split('ticket-').join(''));
 			try {

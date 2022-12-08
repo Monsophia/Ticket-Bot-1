@@ -9,7 +9,7 @@ module.exports = {
 	usage: 'ping',
 	userperms: [],
 	botperms: [],
-	run: async (client, message, args) => {
+	run: async (client, message) => {
 		message.channel.send('🏓 Pinging....').then((msg) => {
 			const pEmbed = new MessageEmbed()
 				.setTitle('🏓 Pong!')

@@ -9,7 +9,7 @@ module.exports = {
 	usage: 'transcript',
 	userperms: [],
 	botperms: [],
-	run: async (client, message, args) => {
+	run: async (message, args) => {
 		const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.channel;
 		if (channel.name.includes('ticket-')) {
 			if (message.member.hasPermission('ADMINISTRATOR') || channel.name === `ticket-${message.author.id}`) {
@@ -29,7 +29,7 @@ module.exports = {
 							description: ' ',
 						});
 					}
-					catch(e) {
+					catch (e) {
 						return message.channel.send('An error occurred, please try again!');
 					}
 

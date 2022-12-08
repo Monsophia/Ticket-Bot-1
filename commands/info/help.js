@@ -40,10 +40,10 @@ module.exports = {
 				`]);
 
 			let categories;
-			if(message.author.id !== BOT_OWNER) {
+			if (message.author.id !== BOT_OWNER) {
 				categories = [...new Set(client.commands.filter(cmd => cmd.category !== 'Owner').map(cmd => cmd.category))];
 			}
-			else{
+			else {
 				categories = [...new Set(client.commands.map(cmd => cmd.category))];
 			}
 
