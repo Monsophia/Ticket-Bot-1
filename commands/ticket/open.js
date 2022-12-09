@@ -3,10 +3,8 @@ module.exports = {
 	name: 'open',
 	category: 'Ticket',
 	description: 'Re-opens a ticket.',
-	aliases: [],
 	usage: 'open',
 	userperms: ['ADMINISTRATOR'],
-	botperms: [],
 	run: async (message) => {
 		if (message.channel.name.includes('ticket-')) {
 			const member = message.guild.members.cache.get(message.channel.name.split('ticket-').join(''));
@@ -16,10 +14,9 @@ module.exports = {
 					SEND_MESSAGES: true,
 					ATTACH_FILES: true,
 					READ_MESSAGE_HISTORY: true,
-				})
-					.then(() => {
-						message.channel.send(`Successfully re-opened ${message.channel}`);
-					});
+				}).then(() => {
+					message.channel.send(`Successfully re-opened ${message.channel}`);
+				});
 			}
 			catch (e) {
 				return message.channel.send('An error occurred, please try again!');

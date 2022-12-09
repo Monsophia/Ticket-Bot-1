@@ -8,8 +8,6 @@ module.exports = {
 	category: 'Info',
 	description: 'Returns the help page, or one specific command info.',
 	usage: 'help [command/category]',
-	userperms: [],
-	botperms: [],
 	run: async (client, message, args, prefix) => {
 		if (args.join(' ')) {
 			const cmd = client.commands.get(args.join(' ').toLowerCase()) || client.commands.get(client.aliases.get(args.join(' ').toLowerCase()));
@@ -18,7 +16,7 @@ module.exports = {
 				.setTitle(`Information for ${cmd.name.toString().toLowerCase()} command`)
 				.setColor('BLUE')
 				.setTimestamp()
-				.setFooter('Syntax: <> = required, [] = optional', `${client.user.avatarURL()}`)
+				.setFooter('Syntax: <> = required, [] = optional')
 				.setDescription([
 					`> **Name: \`${cmd.name}\`**`,
 					`> **Category: \`${cmd.category.toString()}\`**`,
@@ -31,7 +29,7 @@ module.exports = {
 		else {
 			const embed = new MessageEmbed()
 				.setTitle(`${client.user.username}'s Commands`)
-				.setFooter(`${client.user.username}'s Help`, `${client.user.avatarURL()}`)
+				.setFooter(`${client.user.username}'s Help`)
 				.setTimestamp()
 				.setColor('BLUE')
 				.setDescription([`

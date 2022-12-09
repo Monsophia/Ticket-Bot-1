@@ -22,13 +22,14 @@ module.exports = {
 	description: 'Displays indept information about the bot.',
 	aliases: ['bot', 'bi'],
 	usage: 'botinfo',
-	userperms: [],
 	botperms: ['USE_EXTERNAL_EMOJIS'],
 	run: async (client, message) => {
 		cpuStat.usagePercent(function (error) {
+
 			if (error) {
 				return console.error(error);
 			}
+
 			const embed = new MessageEmbed()
 				.setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 512 }))
 				.setColor(message.guild.members.cache.get(client.user.id).displayHexColor)

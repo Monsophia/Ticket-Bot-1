@@ -11,15 +11,10 @@ module.exports = {
 	botperms: ['USE_EXTERNAL_EMOJIS'],
 	run: async (client, message) => {
 		try {
-			message.channel.send('⚙ Restarting...').then(msg => msg.delete({ timeout: 300 }))
-				.then(() => client.destroy())
-				.then(() => client.login(BOT_TOKEN))
-				.then(() => message.channel.send('<:vSuccess:725270799098970112> Restart Successful'));
+			message.channel.send('⚙ Restarting...').then(msg => msg.delete({ timeout: 300 })).then(() => client.destroy()).then(() => client.login(BOT_TOKEN)).then(() => message.channel.send('<:vSuccess:725270799098970112> Restart Successful'));
 		}
 		catch (e) {
-			return message.channel.send(
-				'<:vError:725270799124004934> An error occurred, please try again!',
-			);
+			return message.channel.send('<:vError:725270799124004934> An error occurred, please try again!');
 		}
 	},
 };

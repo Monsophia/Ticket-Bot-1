@@ -10,6 +10,7 @@
     "author": "zhon12345",
     "license": "ISC",
     "dependencies": {
+        "@anishshobith/deeptype": "^1.1.0",
         "better": "^0.1.0",
         "cpu-stat": "^2.0.1",
         "discord.js": "^12.5.3",

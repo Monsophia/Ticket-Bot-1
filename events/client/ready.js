@@ -1,6 +1,7 @@
 const { BOT_PREFIX } = process.env;
 
 module.exports = async (client) => {
+
 	const botStatus = [
 		`${client.commands.size} Commands`,
 		`${client.users.cache.size} Users`,

@@ -2,10 +2,7 @@ module.exports = {
 	name: 'new',
 	category: 'Ticket',
 	description: 'Creates a new ticket.',
-	aliases: [],
 	usage: 'new',
-	userperms: [],
-	botperms: [],
 	run: async (message, prefix) => {
 		if (message.guild.channels.cache.find(channel => channel.name === `ticket-${message.author.id}`)) {
 			return message.reply('you already have a ticket, please close your existing ticket first before opening a new one!');
